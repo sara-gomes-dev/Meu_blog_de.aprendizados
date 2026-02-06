@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Blog de Aprendizado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Diário de uma Estudante em Computação</h1>
+        <p>Minha jornada, meus estudos e minha evolução</p>
+    </header>
+
+    <main>
+
+        <section id="form-postagem">
+            <h2>Criar nova postagem</h2>
+
+            <form id="postForm">
+                <textarea 
+                    id="textPost" 
+                    placeholder="Escreva aqui seu aprendizado de hoje..." 
+                    required>
+                </textarea>
+
+                <input 
+                    type="file" 
+                    id="imagemPost" 
+                    accept="image/*">
+
+                <input 
+                    type="file" 
+                    id="videoPost"  
+                    accept="video/*">
+
+                <button type="submit">Publicar</button>
+            </form>
+        </section>
+
+        <section id="feed">
+            <h2>Minhas Postagens</h2>
+
+            <div id="posts">
+                <!-- As postagens aparecerão aqui -->
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>2026 - Sara Gomes | Ciência da Computação</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
