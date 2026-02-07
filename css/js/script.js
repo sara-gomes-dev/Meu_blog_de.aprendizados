@@ -20,10 +20,14 @@ form.addEventListener("submit", function (event) {
     const post = {
         id: Date.now(),
         nome: "Sara Gomes",
-        texto: textoPost.value,
+        texto: textPost.value,
         data: new Date().toLocaleDateString("pt-BR"),
-        imagem: imagemPost.files[0] ? URL.createObjectURL(imagemPost.files[0]) : null,
-        video: videoPost.files[0] ? URL.createObjectURL(videoPost.files[0]) : null,
+        imagem: imagemPost.files[0]
+            ? URL.createObjectURL(imagemPost.files[0])
+            : null,
+        video: videoPost.files[0]
+            ? URL.createObjectURL(videoPost.files[0])
+            : null,
         likes: 0,
         comentarios: []
     };
@@ -61,6 +65,7 @@ function exibirPost(post) {
     const postEl = document.createElement("div");
     postEl.classList.add("post");
 
+    // CABEÇALHO
     const header = document.createElement("div");
     header.classList.add("post-header");
 
@@ -69,6 +74,7 @@ function exibirPost(post) {
         <span>${post.data}</span>
     `;
 
+    // TEXTO
     const texto = document.createElement("p");
     texto.textContent = post.texto;
 
@@ -93,7 +99,7 @@ function exibirPost(post) {
 
     editBtn.addEventListener("click", () => {
         const novoTexto = prompt("Editar postagem:", post.texto);
-        if (novoTexto) {
+        if (novoTexto !== null && novoTexto.trim() !== "") {
             texto.textContent = novoTexto;
             atualizarTexto(post.id, novoTexto);
         }
